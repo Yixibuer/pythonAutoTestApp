@@ -1,0 +1,32 @@
+Fri, 09 Jul 2021 16:18:03 Logger.py[line:66] INFO <common.Logger.LogOutput object at 0x0000024A070310A0>
+Fri, 09 Jul 2021 16:18:03 remote_connection.py[line:390] DEBUG POST http://127.0.0.1:4723/wd/hub/session {"capabilities": {"firstMatch": [{"platformName": "Android", "appium:platformVersion": "9", "appium:deviceName": "00395cd40207", "appium:appPackage": "cn.codemao.android.kids.lite", "appium:appActivity": ".module.splash.SplashActivity", "appium:noReset": "True"}]}, "desiredCapabilities": {"platformName": "Android", "platformVersion": "9", "deviceName": "00395cd40207", "appPackage": "cn.codemao.android.kids.lite", "appActivity": ".module.splash.SplashActivity", "noReset": "True"}}
+Fri, 09 Jul 2021 16:18:03 connectionpool.py[line:227] DEBUG Starting new HTTP connection (1): 127.0.0.1:4723
+Fri, 09 Jul 2021 16:18:22 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session HTTP/1.1" 200 893
+Fri, 09 Jul 2021 16:18:22 remote_connection.py[line:442] DEBUG Finished Request
+Fri, 09 Jul 2021 16:18:22 remote_connection.py[line:390] DEBUG POST http://127.0.0.1:4723/wd/hub/session/6b8311b3-166b-45b9-9d93-72641cc5b3d2/timeouts/implicit_wait {"ms": 8000.0, "sessionId": "6b8311b3-166b-45b9-9d93-72641cc5b3d2"}
+Fri, 09 Jul 2021 16:18:22 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/6b8311b3-166b-45b9-9d93-72641cc5b3d2/timeouts/implicit_wait HTTP/1.1" 200 76
+Fri, 09 Jul 2021 16:18:22 remote_connection.py[line:442] DEBUG Finished Request
+Fri, 09 Jul 2021 16:18:30 remote_connection.py[line:390] DEBUG POST http://127.0.0.1:4723/wd/hub/session/6b8311b3-166b-45b9-9d93-72641cc5b3d2/element {"using": "id", "value": "cn.codemao.android.kids.lite:id/iv_dialog_home_ads", "sessionId": "6b8311b3-166b-45b9-9d93-72641cc5b3d2"}
+Fri, 09 Jul 2021 16:18:30 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/6b8311b3-166b-45b9-9d93-72641cc5b3d2/element HTTP/1.1" 200 199
+Fri, 09 Jul 2021 16:18:30 remote_connection.py[line:442] DEBUG Finished Request
+Fri, 09 Jul 2021 16:18:30 remote_connection.py[line:390] DEBUG POST http://127.0.0.1:4723/wd/hub/session/6b8311b3-166b-45b9-9d93-72641cc5b3d2/element {"using": "id", "value": "cn.codemao.android.kids.lite:id/iv_dialog_home_ads_close", "sessionId": "6b8311b3-166b-45b9-9d93-72641cc5b3d2"}
+Fri, 09 Jul 2021 16:18:30 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/6b8311b3-166b-45b9-9d93-72641cc5b3d2/element HTTP/1.1" 200 199
+Fri, 09 Jul 2021 16:18:30 remote_connection.py[line:442] DEBUG Finished Request
+Fri, 09 Jul 2021 16:18:30 remote_connection.py[line:390] DEBUG POST http://127.0.0.1:4723/wd/hub/session/6b8311b3-166b-45b9-9d93-72641cc5b3d2/element/00000000-0000-05d0-ffff-ffff0000000c/click {"id": "00000000-0000-05d0-ffff-ffff0000000c", "sessionId": "6b8311b3-166b-45b9-9d93-72641cc5b3d2"}
+Fri, 09 Jul 2021 16:18:30 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/6b8311b3-166b-45b9-9d93-72641cc5b3d2/element/00000000-0000-05d0-ffff-ffff0000000c/click HTTP/1.1" 200 76
+Fri, 09 Jul 2021 16:18:30 remote_connection.py[line:442] DEBUG Finished Request
+Fri, 09 Jul 2021 16:18:32 remote_connection.py[line:390] DEBUG POST http://127.0.0.1:4723/wd/hub/session/6b8311b3-166b-45b9-9d93-72641cc5b3d2/element {"using": "id", "value": "cn.codemao.android.kids.lite:id/tv_mine", "sessionId": "6b8311b3-166b-45b9-9d93-72641cc5b3d2"}
+Fri, 09 Jul 2021 16:18:32 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/6b8311b3-166b-45b9-9d93-72641cc5b3d2/element HTTP/1.1" 200 199
+Fri, 09 Jul 2021 16:18:32 remote_connection.py[line:442] DEBUG Finished Request
+Fri, 09 Jul 2021 16:18:32 remote_connection.py[line:390] DEBUG DELETE http://127.0.0.1:4723/wd/hub/session/6b8311b3-166b-45b9-9d93-72641cc5b3d2 {"sessionId": "6b8311b3-166b-45b9-9d93-72641cc5b3d2"}
+Fri, 09 Jul 2021 16:18:33 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "DELETE /wd/hub/session/6b8311b3-166b-45b9-9d93-72641cc5b3d2 HTTP/1.1" 200 76
+Fri, 09 Jul 2021 16:18:33 remote_connection.py[line:442] DEBUG Finished Request
+Fri, 09 Jul 2021 16:18:33 remote_connection.py[line:390] DEBUG POST http://127.0.0.1:4723/wd/hub/session/6b8311b3-166b-45b9-9d93-72641cc5b3d2/element {"using": "id", "value": "cn.codemao.android.kids.lite:id/tv_mine", "sessionId": "6b8311b3-166b-45b9-9d93-72641cc5b3d2"}
+Fri, 09 Jul 2021 16:18:33 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/6b8311b3-166b-45b9-9d93-72641cc5b3d2/element HTTP/1.1" 404 131
+Fri, 09 Jul 2021 16:18:33 remote_connection.py[line:442] DEBUG Finished Request
+Fri, 09 Jul 2021 16:18:33 remote_connection.py[line:390] DEBUG DELETE http://127.0.0.1:4723/wd/hub/session/6b8311b3-166b-45b9-9d93-72641cc5b3d2 {"sessionId": "6b8311b3-166b-45b9-9d93-72641cc5b3d2"}
+Fri, 09 Jul 2021 16:18:33 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "DELETE /wd/hub/session/6b8311b3-166b-45b9-9d93-72641cc5b3d2 HTTP/1.1" 404 131
+Fri, 09 Jul 2021 16:18:33 remote_connection.py[line:442] DEBUG Finished Request
+Fri, 09 Jul 2021 16:18:33 remote_connection.py[line:390] DEBUG DELETE http://127.0.0.1:4723/wd/hub/session/6b8311b3-166b-45b9-9d93-72641cc5b3d2 {"sessionId": "6b8311b3-166b-45b9-9d93-72641cc5b3d2"}
+Fri, 09 Jul 2021 16:18:33 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "DELETE /wd/hub/session/6b8311b3-166b-45b9-9d93-72641cc5b3d2 HTTP/1.1" 404 131
+Fri, 09 Jul 2021 16:18:33 remote_connection.py[line:442] DEBUG Finished Request

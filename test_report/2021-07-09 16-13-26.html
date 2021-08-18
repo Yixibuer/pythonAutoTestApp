@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	    <title>测试报告</title>
+	    <meta name="generator" content="HTMLTestRunner 0.8.2.2"/>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+	    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+	    
+	<style type="text/css" media="screen">
+	body        { font-family: Microsoft YaHei,Tahoma,arial,helvetica,sans-serif;padding: 20px; font-size: 80%; }
+	table       { font-size: 100%; }
+
+	/* -- heading ---------------------------------------------------------------------- */
+	.heading {
+	    margin-top: 0ex;
+	    margin-bottom: 1ex;
+	}
+
+	.heading .description {
+	    margin-top: 4ex;
+	    margin-bottom: 6ex;
+	}
+
+	/* -- report ------------------------------------------------------------------------ */
+	#total_row  { font-weight: bold; }
+	.passCase   { color: #5cb85c; font-size: 12px;}
+	.failCase   { color: #d9534f; font-weight: bold;font-size: 12px; }
+	.errorCase  { color: #f0ad4e; font-weight: bold;font-size: 12px; }
+	.hiddenRow  { display: none; }
+	.testcase   { margin-left: 2em; }
+	</style>
+	
+	</head>
+	<body >
+	<script language="javascript" type="text/javascript">
+	output_list = Array();
+
+	/*level 调整增加只显示通过用例的分类 --Findyou
+	0:Summary //all hiddenRow
+	1:Failed  //pt hiddenRow, ft none
+	2:Pass    //pt none, ft hiddenRow
+	3:All     //pt none, ft none
+	*/
+	function showCase(level) {
+	    trs = document.getElementsByTagName("tr");
+	    for (var i = 0; i < trs.length; i++) {
+	        tr = trs[i];
+	        id = tr.id;
+	        if (id.substr(0,2) == 'ft') {
+	            if (level == 1 || level==4) {
+	                tr.className = '';
+	            }
+	            else {
+	                tr.className = 'hiddenRow';
+	            }
+	        }
+	        if (id.substr(0,2) == 'et') {
+	            if (level == 2  || level==4) {
+	                tr.className = '';
+	            }
+	            else {
+	                tr.className = 'hiddenRow';
+	            }
+	        }
+	        if (id.substr(0,2) == 'pt') {
+	            if (level ==3  || level==4) {
+	                tr.className = '';
+	            }
+	            else {
+	                tr.className = 'hiddenRow';
+	            }
+	        }
+	    }
+
+	    //加入【详细】切换文字变化 --Findyou
+	    detail_class=document.getElementsByClassName('detail');
+		//console.log(detail_class.length)
+		if (level == 3) {
+			for (var i = 0; i < detail_class.length; i++){
+				detail_class[i].innerHTML="收起"
+			}
+		}
+		else{
+				for (var i = 0; i < detail_class.length; i++){
+				detail_class[i].innerHTML="详细"
+			}
+		}
+	}
+
+	function showClassDetail(cid, count) {
+	    var id_list = Array(count);
+	    var toHide = 1;
+	    for (var i = 0; i < count; i++) {
+	        //ID修改 点 为 下划线 -Findyou
+	        tid0 = 't' + cid.substr(1) + '_' + (i+1);
+	        tid = 'f' + tid0;
+	        tr = document.getElementById(tid);
+	        if (!tr) {
+	            tid = 'p' + tid0;
+	            tr = document.getElementById(tid);
+	        }
+	        id_list[i] = tid;
+	        if (tr.className) {
+	            toHide = 0;
+	        }
+	    }
+	    for (var i = 0; i < count; i++) {
+	        tid = id_list[i];
+	        //修改点击无法收起的BUG，加入【详细】切换文字变化 --Findyou
+	        if (toHide) {
+	            document.getElementById(tid).className = 'hiddenRow';
+	            document.getElementById(cid).innerText = "详细"
+	        }
+	        else {
+	            document.getElementById(tid).className = '';
+	            document.getElementById(cid).innerText = "收起"
+	        }
+	    }
+	}
+
+	function html_escape(s) {
+	    s = s.replace(/&/g,'&amp;');
+	    s = s.replace(/</g,'&lt;');
+	    s = s.replace(/>/g,'&gt;');
+	    return s;
+	}
+	</script>
+	<div class='heading' style="font-size:12px;">
+	<h2 style="font-family: Microsoft YaHei;text-align:center;">测试报告</h2>
+	<p class='attribute'><strong>测试人员 : </strong> 自动化机器</p>
+	<p class='attribute'><strong>开始时间 : </strong> 2021-07-09 16:13:26</p>
+	<p class='attribute'><strong>合计耗时 : </strong> 0:00:31.591985</p>
+	<p class='attribute'><strong>测试结果 : </strong> 共 4，失败 1，错误 3，通过率= 0.00%</p>
+	
+	<p class='description'>本测试报告内容包含超级计算器的简单测试</p>
+	</div>
+
+	
+	
+	<p id='show_detail_line'>
+	<a class="btn btn-primary" href='javascript:showCase(0)'>通过率{ 0.00% }</a>
+	<a class="btn btn-danger" href='javascript:showCase(1)'>失败{ 1 }</a>
+	<a class="btn btn-warning" href='javascript:showCase(2)'>错误{ 3 }</a>
+	<a class="btn btn-success" href='javascript:showCase(3)'>通过{ 0 }</a>
+	<a class="btn btn-info" href='javascript:showCase(4)'>所有{ 4 }</a>
+	</p>
+	<table id='result_table' class="table table-condensed table-bordered table-hover">
+	<colgroup>
+	<col align='left' />
+	<col align='right' />
+	<col align='right' />
+	<col align='right' />
+	<col align='right' />
+	<col align='right' />
+	</colgroup>
+	<tr id='header_row' class="text-center success" style="font-weight: bold;font-size:14px;">
+	    <td>用例集/测试用例</td>
+	    <td>总计</td>
+	    <td>通过</td>
+	    <td>失败</td>
+	    <td>错误</td>
+	    <td>详细</td>
+	</tr>
+	
+	<tr class='errorClass warning' style="font-size:12px;">
+	    <td>test_app.MyTests</td>
+	    <td class="text-center">3</td>
+	    <td class="text-center">0</td>
+	    <td class="text-center">1</td>
+	    <td class="text-center">2</td>
+	    <td class="text-center"><a href="javascript:showClassDetail('c1',3)" class="detail" id='c1'>详细</a></td>
+	</tr>
+	
+	<tr id='ft1_1' class='none'>
+	    <td class='failCase'><div class='testcase'>test_01: 进入首页测试</div></td>
+	    <td colspan='5' align='center'>
+	    <!--默认收起错误信息 -Findyou
+	    <button id='btn_ft1_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_1'>失败</button>
+	    <div id='div_ft1_1' class="collapse">  -->
+
+	    <!-- 默认展开错误信息 -Findyou -->
+	    <button id='btn_ft1_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_1'>失败</button>
+	    <div id='div_ft1_1' class="collapse in">
+	    <pre>
+	    
+	ft1_1: 用例开始执行
+出现首页广告弹框
+Traceback (most recent call last):
+  File "D:\study\apptest-master\testcase\test_app.py", line 45, in test_01
+    self.assertEqual(1,2,'进入首页成功')
+AssertionError: 1 != 2 : 进入首页成功
+
+	
+	    </pre>
+	    </div>
+	    </td>
+	</tr>
+	
+	<tr id='et1_2' class='none'>
+	    <td class='errorCase'><div class='testcase'>test_02: 进入首页测试</div></td>
+	    <td colspan='5' align='center'>
+	    <!--默认收起错误信息 -Findyou
+	    <button id='btn_et1_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_2'>错误</button>
+	    <div id='div_et1_2' class="collapse">  -->
+
+	    <!-- 默认展开错误信息 -Findyou -->
+	    <button id='btn_et1_2' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_et1_2'>错误</button>
+	    <div id='div_et1_2' class="collapse in">
+	    <pre>
+	    
+	et1_2: 用例开始执行
+Traceback (most recent call last):
+  File "D:\study\apptest-master\pages\BasePage.py", line 16, in find_element
+    WebDriverWait(self.driver, 10, 0.5).until(EC.visibility_of_element_located(loc))
+  File "D:\Program Files (x86)\lib\site-packages\selenium\webdriver\support\wait.py", line 71, in until
+    value = method(self._driver)
+  File "D:\Program Files (x86)\lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 128, in __call__
+    return _element_if_visible(_find_element(driver, self.locator))
+  File "D:\Program Files (x86)\lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 415, in _find_element
+    raise e
+  File "D:\Program Files (x86)\lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 411, in _find_element
+    return driver.find_element(*by)
+  File "D:\Program Files (x86)\lib\site-packages\appium\webdriver\webdriver.py", line 282, in find_element
+    return self.execute(RemoteCommand.FIND_ELEMENT, {'using': by, 'value': value})['value']
+  File "D:\Program Files (x86)\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "D:\Program Files (x86)\lib\site-packages\appium\webdriver\errorhandler.py", line 31, in check_response
+    raise wde
+  File "D:\Program Files (x86)\lib\site-packages\appium\webdriver\errorhandler.py", line 26, in check_response
+    super().check_response(response)
+  File "D:\Program Files (x86)\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: A session is either terminated or not started
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\apptest-master\testcase\test_app.py", line 51, in test_02
+    self.my_page.click_my_button()
+  File "D:\study\apptest-master\pages\MyPage.py", line 37, in click_my_button
+    self.find_element(*self.my_button).click()
+  File "D:\study\apptest-master\pages\BasePage.py", line 19, in find_element
+    print('页面未找到%s元素' % (loc))
+TypeError: not all arguments converted during string formatting
+
+	
+	    </pre>
+	    </div>
+	    </td>
+	</tr>
+	
+	<tr id='et1_3' class='none'>
+	    <td class='errorCase'><div class='testcase'>test_02: 进入首页测试</div></td>
+	    <td colspan='5' align='center'>
+	    <!--默认收起错误信息 -Findyou
+	    <button id='btn_et1_3' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_3'>错误</button>
+	    <div id='div_et1_3' class="collapse">  -->
+
+	    <!-- 默认展开错误信息 -Findyou -->
+	    <button id='btn_et1_3' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_et1_3'>错误</button>
+	    <div id='div_et1_3' class="collapse in">
+	    <pre>
+	    
+	et1_3: 用例开始执行
+Traceback (most recent call last):
+  File "D:\study\apptest-master\testcase\test_app.py", line 59, in tearDown
+    self.driver.quit()
+  File "D:\Program Files (x86)\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 698, in quit
+    self.execute(Command.QUIT)
+  File "D:\Program Files (x86)\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "D:\Program Files (x86)\lib\site-packages\appium\webdriver\errorhandler.py", line 31, in check_response
+    raise wde
+  File "D:\Program Files (x86)\lib\site-packages\appium\webdriver\errorhandler.py", line 26, in check_response
+    super().check_response(response)
+  File "D:\Program Files (x86)\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: A session is either terminated or not started
+
+
+	
+	    </pre>
+	    </div>
+	    </td>
+	</tr>
+	
+	<tr class='errorClass warning' style="font-size:12px;">
+	    <td>unittest.suite._ErrorHolder</td>
+	    <td class="text-center">1</td>
+	    <td class="text-center">0</td>
+	    <td class="text-center">0</td>
+	    <td class="text-center">1</td>
+	    <td class="text-center"><a href="javascript:showClassDetail('c2',1)" class="detail" id='c2'>详细</a></td>
+	</tr>
+	
+	<tr id='et2_1' class='none'>
+	    <td class='errorCase'><div class='testcase'>MyTests)</div></td>
+	    <td colspan='5' align='center'>
+	    <!--默认收起错误信息 -Findyou
+	    <button id='btn_et2_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_et2_1'>错误</button>
+	    <div id='div_et2_1' class="collapse">  -->
+
+	    <!-- 默认展开错误信息 -Findyou -->
+	    <button id='btn_et2_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_et2_1'>错误</button>
+	    <div id='div_et2_1' class="collapse in">
+	    <pre>
+	    
+	et2_1: 用例开始执行
+Traceback (most recent call last):
+  File "D:\study\apptest-master\testcase\test_app.py", line 63, in tearDownClass
+    cls.driver.quit()
+  File "D:\Program Files (x86)\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 698, in quit
+    self.execute(Command.QUIT)
+  File "D:\Program Files (x86)\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "D:\Program Files (x86)\lib\site-packages\appium\webdriver\errorhandler.py", line 31, in check_response
+    raise wde
+  File "D:\Program Files (x86)\lib\site-packages\appium\webdriver\errorhandler.py", line 26, in check_response
+    super().check_response(response)
+  File "D:\Program Files (x86)\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: A session is either terminated or not started
+
+
+	
+	    </pre>
+	    </div>
+	    </td>
+	</tr>
+	
+	<tr id='total_row' class="text-center active" style="font-size:14px;">
+	    <td>总计</td>
+	    <td>4</td>
+	    <td>0</td>
+	    <td>1</td>
+	    <td>3</td>
+	    <td>通过率：0.00%</td>
+	</tr>
+	</table>
+	
+	<div id='ending'>&nbsp;</div>
+	    <div style=" position:fixed;right:50px; bottom:30px; width:20px; height:20px;cursor:pointer">
+	    <a href="#"><span class="glyphicon glyphicon-eject" style = "font-size:30px;" aria-hidden="true">
+	    </span></a></div>
+	    
+
+	</body>
+	</html>
+	

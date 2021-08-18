@@ -1,0 +1,3 @@
+Thu, 22 Jul 2021 18:06:59 Logger.py[line:66] INFO <common.Logger.LogOutput object at 0x000001D65FA81040>
+Thu, 22 Jul 2021 18:06:59 connectionpool.py[line:971] DEBUG Starting new HTTPS connection (1): oapi.dingtalk.com:443
+Thu, 22 Jul 2021 18:06:59 connectionpool.py[line:452] DEBUG https://oapi.dingtalk.com:443 "POST /robot/send?access_token=bea3ec47a670528ef91f10329209bd4e33b23c3df1a08397fefc4a8025c262cb&sign=BoSbqEvKDgIsUIwSTGIy%2Bfjipx51tdhMTHd1DghRb0s%3D&timestamp=1626948419383 HTTP/1.1" 200 None
